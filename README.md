@@ -1,53 +1,97 @@
-# Dumb Charades — Deploy Guide
+# Dumb Charades
 
-This is a ready-to-deploy Vite + React project. It already builds clean
-(`npm run build` verified).
+A simple and fun **Dumb Charades game** built with React, Vite, Tailwind CSS, and Capacitor.
 
-## Fastest path: Vercel (free, ~2 minutes, no terminal needed)
+## Features
 
-1. Go to https://vercel.com and sign up / log in (GitHub login is easiest).
-2. Click **Add New → Project**.
-3. Choose **"Deploy without Git"** / drag-and-drop, and drop this whole
-   folder in. (Or push it to a GitHub repo first and import that repo —
-   either works.)
-4. Vercel auto-detects Vite. Leave the defaults and click **Deploy**.
-5. You'll get a live URL like `dumb-charades.vercel.app` — open that on
-   your phone.
+*  Bollywood & Hollywood movie categories
+*  Timed gameplay
+*  Random movie selection
+*  Simple and interactive game interface
+*  Mobile-friendly design
+*  Android app support using Capacitor
+*  Can also be played as a web app
 
-Netlify works the same way (drag-and-drop at https://app.netlify.com/drop).
+## Tech Stack
 
-## Terminal path, if you'd rather use the CLI
+* **React** 
+* **Vite** 
+* **Tailwind CSS** 
+* **Capacitor** 
+* **JavaScript** 
+
+## Android App
+
+The web application is packaged as an Android application using Capacitor.
+
+The Android project is included in the `android/` directory.
+
+## Run Locally
+
+Clone the repository:
+
+```bash
+git clone https://github.com/sanwyam/dumb-charades-app.git
+cd dumb-charades-app
+```
+
+Install dependencies:
 
 ```bash
 npm install
-npm run build      # outputs static files to /dist
-npx vercel deploy --prod     # or: npx netlify deploy --prod
 ```
 
-## Making it feel like a real app on your phone
-
-Once it's live at a URL:
-
-- **iPhone (Safari):** open the link → Share icon → "Add to Home Screen."
-- **Android (Chrome):** open the link → ⋮ menu → "Add to Home screen" /
-  "Install app."
-
-It'll launch full-screen without browser chrome, same as a native app —
-the `theme-color` and `apple-mobile-web-app` meta tags in `index.html`
-are already set up for this.
-
-## Local dev / testing on your own phone before deploying
+Start the development server:
 
 ```bash
-npm install
-npm run dev -- --host
+npm run dev
 ```
 
-This prints a `http://<your-computer-ip>:5173` address — open that on
-your phone as long as it's on the same WiFi network as your computer.
+The application will be available at the local development URL shown in the terminal.
 
-## Editing the movie lists
+## Build
 
-Open `src/App.jsx` and scroll to the top — `HOLLYWOOD` and `BOLLYWOOD`
-are plain arrays of strings. Add, remove, or paste in more titles freely;
-nothing else in the code needs to change.
+Create a production build:
+
+```bash
+npm run build
+```
+
+The generated production files will be placed in the `dist/` directory.
+
+## Movie Lists
+
+The movie lists are stored in:
+
+```text
+src/App.jsx
+```
+
+The Bollywood and Hollywood movie arrays can be edited to add or remove movies.
+
+## Project Structure
+
+```text
+dumb-charades-app/
+├── android/              # Android/Capacitor project
+├── src/                  # React source code
+├── index.html            # Main HTML file
+├── capacitor.config.json # Capacitor configuration
+├── package.json          # Dependencies and scripts
+├── tailwind.config.js    # Tailwind configuration
+└── vite.config.js        # Vite configuration
+```
+
+## Deployment
+
+The application can be deployed as a web app using platforms such as Vercel or Netlify.
+
+For Android builds, the Capacitor Android project can be opened and built using Android Studio.
+
+## Author
+
+**Sanyam Mishra**
+
+---
+
+⭐ If you like the project, consider giving the repository a star!
